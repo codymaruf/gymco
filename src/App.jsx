@@ -1,23 +1,26 @@
-import Nav from './Sections/Nav'
 import Hero from './Sections/Hero'
 import About from './Sections/About'
-import Service from './Sections/Service'
+import Programms from './Sections/Programms'
+import Timing from './Sections/Timing'
 import Testimonial from './Sections/Testimonial'
-import Pricing from './Sections/Pricing'
+import Location from './Sections/Location'
 import Contact from './Sections/Contact'
 import Footer from './Sections/Footer'
+import Nav from './Sections/Nav'
+
 
 const App = () => {
   return (
     <section className='font-inter'>
       <Nav />
-        <Hero />
-        <About />
-        {/* <Service /> */}
-        <Testimonial />
-        <Pricing />
-        <Contact />
-        <Footer />
+      <Hero />
+      <About />
+      <Programms />
+      <Timing />
+      <Testimonial  />
+      <Location />
+      <Contact />
+      <Footer />
     </section>
   )
 }

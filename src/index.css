@@ -5,9 +5,9 @@
 @theme{
     --font-inter: 'Inter', sans-serif;
 
-    --color-gray: #777777;
-    --color-orange: #f39f45;
-    --color-gold: #f7f0b9;
+    --color-pink: #f21c8b;
+    --color-orange: #fe6c1d;
+    --color-violate: #5c1a89;
 
-    --breakpoint-tablet: 900px;
+    --breakpoint-tablet: 970px;
 }

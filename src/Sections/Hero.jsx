@@ -1,35 +1,31 @@
-const Hero = () => {
+export default function Hero() {
   return (
-    <section id="home" className="relative z-0 w-full h-screen overflow-hidden bg-gradient-to-b from-black via-black to-[#aa7f47]">
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-[#f7f0b9] px-4">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-          Build Strength. <br />
-          <span className="text-white">Train Smart. Live Strong.</span>
+    <section className="w-full flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-16 pt-24 md:py-40 bg-white font-inter">
+      {/* Left Text */}
+      <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#5c1a89] leading-tight">
+          Empowering Women <br className="hidden sm:block" />
+          Through Fitness
         </h1>
-
-        <p className="text-lg sm:text-xl max-w-2xl mb-8 text-[#f7f0b9]/90">
-          Welcome to The Sylhet Gym — Sylhet’s largest fitness center with expert trainers, modern equipment, and unbeatable energy.
+        <p className="text-base sm:text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
+          Join Sylhet’s safe and supportive female-only gym. Build strength, confidence, and a healthy lifestyle — on your terms.
         </p>
+        <a
+          href="#contact"
+          className="inline-block px-6 py-3 rounded-full bg-[#fe6c1d] text-white font-semibold hover:bg-[#f21c8b] transition duration-300"
+        >
+          Join Now
+        </a>
+      </div>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a
-            href="#join"
-            className="bg-orange text-black px-6 py-2 rounded-full font-semibold hover:bg-white transition"
-          >
-            Join Now
-          </a>
-          <a
-            href="#services"
-            className="bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-orange transition"
-          >
-            View Classes
-          </a>
-        </div>
+      {/* Right Image */}
+      <div className="w-full md:w-1/2 mb-5 md:mb-0">
+        <img
+          src="/assets/bg2.jpg"
+          alt="background"
+          className="w-full max-w-md mx-auto rounded-xl shadow-lg"
+        />
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

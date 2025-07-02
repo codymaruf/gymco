@@ -1,73 +1,39 @@
-import {
-  Zap,
-  Dumbbell,
-  Users,
-  HeartPulse
-} from "lucide-react";
-
-const Programs = () => {
+export default function About() {
   return (
-    <section id="services" className="bg-black text-[#f7f0b9] py-24 px-6">
-      <div className="max-w-7xl mx-auto grid tablet:grid-cols-2 gap-16 items-center">
-        
-        {/* Left: Text Content */}
-        <div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
-            What We Offer <br />
-            <span className="text-[#aa7f47]">at The Sylhet Gym</span>
-          </h2>
-          <p className="text-lg text-[#f7f0b9]/80 mb-6">
-            We don’t just help you lift weights — we build total body transformation systems through professional coaching, intelligent programming, and energy-packed classes.
-          </p>
-          <a
-            href="#join"
-            className="inline-block bg-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-white transition"
-          >
-            Start Your Journey
-          </a>
+    <section
+      id="about"
+      className="w-full bg-[#fefefe] mt-10 px-6 md:px-16 pb-16 font-inter"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        {/* Image */}
+        <div className="w-full md:w-1/2">
+          <img
+            src="/assets/women-gym.jpg"
+            alt="Gym interior or members"
+            className="rounded-xl shadow-md w-full max-w-md mx-auto"
+          />
         </div>
 
-        {/* Right: Programs List */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {/* Card 1 */}
-          <div className="bg-[#1a1a1a] p-6 rounded-xl hover:scale-105 transition">
-            <Zap className="w-8 h-8 text-[#aa7f47] mb-4" />
-            <h3 className="text-xl font-bold mb-2">Personal Training</h3>
-            <p className="text-sm text-[#f7f0b9]/70">
-              1-on-1 expert guidance to help you meet your goals with form, consistency, and drive.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-[#1a1a1a] p-6 rounded-xl hover:scale-105 transition">
-            <Dumbbell className="w-8 h-8 text-[#aa7f47] mb-4" />
-            <h3 className="text-xl font-bold mb-2">Strength Training</h3>
-            <p className="text-sm text-[#f7f0b9]/70">
-              Modern equipment and tailored programs to boost power, stability, and muscle growth.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-[#1a1a1a] p-6 rounded-xl hover:scale-105 transition">
-            <Users className="w-8 h-8 text-[#aa7f47] mb-4" />
-            <h3 className="text-xl font-bold mb-2">Group Workouts</h3>
-            <p className="text-sm text-[#f7f0b9]/70">
-              High-energy classes with motivation, camaraderie, and fun to keep you moving.
-            </p>
-          </div>
-
-          {/* Card 4 */}
-          <div className="bg-[#1a1a1a] p-6 rounded-xl hover:scale-105 transition">
-            <HeartPulse className="w-8 h-8 text-[#aa7f47] mb-4" />
-            <h3 className="text-xl font-bold mb-2">Cardio Burn</h3>
-            <p className="text-sm text-[#f7f0b9]/70">
-              Heart-pumping treadmill, cycling, and HIIT training zones to boost stamina.
-            </p>
-          </div>
+        {/* Text Content */}
+        <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#5c1a89]">
+            About GymCo Female
+          </h2>
+          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+            GymCo Female is more than a fitness center — it's a safe, inspiring
+            space where women in Sylhet can grow stronger, both physically and
+            mentally. Whether you're a student, a mother, or just starting your
+            fitness journey, our all-female environment is designed with your
+            comfort and values in mind.
+          </p>
+          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+            Our facility respects modesty, privacy, and personal goals.
+            With professional female trainers, curated workout programs, and a
+            supportive sisterhood — we make sure your fitness experience aligns
+            with your lifestyle and beliefs.
+          </p>
         </div>
       </div>
     </section>
   );
-};
-
-export default Programs;
+}

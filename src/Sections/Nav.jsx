@@ -1,46 +1,57 @@
-const Navbar = () => {
+import { useEffect, useState } from "react";
+
+export default function Nav() {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setShow(currentScrollY < lastScrollY || currentScrollY < 10);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="bg-black text-gold sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-
+    <nav
+      className={`fixed top-0 w-full z-50 transition-transform duration-300 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      } bg-white/80 backdrop-blur-md shadow-md`}
+    >
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         {/* Logo */}
-        <div className="flex items-center space-x-3">
-          <img
-            className="h-10 w-10 rounded-full"
-            src="assets/sylhet-gym.jpg"
-            alt="The Sylhet Gym Logo"
-          />
-        </div>
+        <img
+          src="/assets/gymCo.jpg"
+          alt="GymCo Logo"
+          className="rounded-full h-12 w-12 object-cover border-2 border-[#fe6c1d]"
+        />
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6">
-          {["Home", "Services", "Pricing", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="hover:text-white transition"
-            >
-              {item}
-            </a>
+        {/* Nav links desktop */}
+        <ul className="hidden sm:flex gap-8 text-base font-semibold font-inter text-[#5c1a89]">
+          {["About", "Services", "Schedule", "Locaion", "Contact"].map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item.toLowerCase()}`}
+                className="relative group"
+              >
+                {item}
+                <span className="block h-[2px] w-0 bg-[#f21c8b] group-hover:w-full transition-all duration-300 mt-1"></span>
+              </a>
+            </li>
           ))}
-        </nav>
+        </ul>
 
-        {/* CTA */}
-        <div className="">
-          <a
-            href="#join"
-            className="bg-gold text-black px-2 py-1.5 rounded-full font-medium text-sm sm:text-lx sm:font-semibold hover:bg-white transition"
-          >
-            Join Now
-          </a>
-        </div>
-        
+        {/* Join Now button */}
+        <a
+          href="#contact"
+          className="text-white font-semibold px-4 py-2 rounded-full bg-[#fe6c1d] hover:bg-[#f21c8b] transition duration-300 text-sm whitespace-nowrap"
+        >
+          Join Now
+        </a>
       </div>
-
-      
-    </header>
+    </nav>
   );
-};
-
-export default Navbar;
+}
